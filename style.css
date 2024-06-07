@@ -1,11 +1,137 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', Courier, monospace;
 }
 
-html,body
-{
+html,
+body {
     width: 100%;
     height: 100%;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo {
+    font-size: 30px;
+    font-weight: bolder;
+    margin: 0px 30px;
+    cursor: pointer;
+}
+
+.nav_content {
+    display: flex;
+}
+
+.nav_content ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.nav_content li {
+    margin: 0px 12px;
+    color: white;
+}
+
+.nav_content a {
+    text-decoration: none;
+    color: rgb(45, 45, 45);
+}
+
+.nav_content a:hover {
+    text-shadow: 2px 2px 15px rgba(25, 25, 25, 1);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px;
+    width: 300px;
+    height: 38px;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.search input {
+    color: black;
+    border: none;
+    outline: none;
+    margin: 0px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search button {
+    margin: 0px 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* panel Css styling */
+
+.panel {
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsContent {
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.newscard
+{
+    width: 250px;
+    height: 290px;
+    border-radius: 10px;
+    background-color: red;
+    margin: 20px;
+}
+
+/* Footer starts from here */
+.footer {
+    width: 100%;
+    height: calc(100% - 670px);
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footinfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
 }
