@@ -71,6 +71,12 @@
         cursor: pointer;
     }
 
+    /* main */
+
+    .blog_card
+    {
+        width: 100%;
+    }
 
     /* Hide on screen */
 

@@ -11,6 +11,16 @@ html,body
     height: 100%;
 }
 
+/* global css */
+
+.obj-width
+{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* **** */
+
 .Nav1
 {
     width: 100%;
@@ -108,6 +118,7 @@ html,body
     height: 100%;
     background-color: rgba(38, 33, 33, 0.797);
     backdrop-filter: blur(10px);
+    z-index: 999;
 }
 
 /* Nav content 2 */
@@ -146,4 +157,38 @@ html,body
 
 /* main body */
 
+#blog-container
+{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
 
+.blog_card
+{
+    width: 280px;
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 1rem;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.blog_card img
+{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.blog_card:hover
+{
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+}
+
+.blog_card p
+{
+    padding-top: 0.7rem;
+}
