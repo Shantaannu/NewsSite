@@ -8,7 +8,3 @@ function closeSidebar() {
     sidebar.style.display = "none";
 }
 
-
-function search() {
-    document.getElementById("srchdwn").classList.toggle("show");
-  }

@@ -46,42 +46,43 @@
 
     /* search */
 
-    .search
-{
-    width: 200px;
-    height: 30px;
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .search {
+        width: 200px;
+        height: 30px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.search input
-{
-    margin: 0px 10px;
-    width: 140px;
-    border: none;
-    outline: none;
-}
+    .search input {
+        margin: 0px 10px;
+        width: 140px;
+        border: none;
+        outline: none;
+    }
 
-.search button
-{
-    margin: 0px 8px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
+    .search button {
+        margin: 0px 8px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
 
 
     /* Hide on screen */
 
 
     /* hide on mobile */
-    
-    .hideonMob
-    {
+
+    .menu-btn svg {
+        display: block;
+    }
+
+
+    .hideonMob {
         display: none;
     }
 

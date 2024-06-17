@@ -16,6 +16,8 @@
 
 <body>
 
+    <!-- nav 1 -->
+
     <div class="Nav1">
         <div class="logo">Brand</div>
         <div class="Nav1_content">
@@ -34,7 +36,7 @@
                 </li>
                 <li class="hideonMob"><a href="">Home</a></li>
                 <li class="hideonMob"><a href="">Profile</a></li>
-                <li class="menu-btn"><span>
+                <li class="menu-btn" onclick="openSidebar()"><span>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                             fill="#e8eaed">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -44,6 +46,24 @@
         </div>
     </div>
 
+
+    <div class="Nav2">
+        <div class="sidebar">
+            <div class="Nav2_content">
+                <ul>
+                    <li class="close-btn" onclick="closeSidebar()"><span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                    </span></li>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Github</a></li>
+                    <li><a href="">Portfolio</a></li>
+                    <li><a href="">Download Code</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
