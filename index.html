@@ -34,9 +34,9 @@
                         </button>
                     </div>
                 </li>
-                <li class="hideonMob"><a href="">Home</a></li>
-                <li class="hideonMob"><a href="">Profile</a></li>
-                <li class="menu-btn" onclick="openSidebar()"><span>
+                <li class="hideonMob"><a href="#">Home</a></li>
+                <li class="hideonMob"><a href="https://github.com/Shantaannu" target="_blank">Profile</a></li>
+                <li class="menu-btn"><span id="menuButton">
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                             fill="#e8eaed">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -46,20 +46,33 @@
         </div>
     </div>
 
+    <!-- nav part 2 -->
 
     <div class="Nav2">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
             <div class="Nav2_content">
                 <ul>
-                    <li class="close-btn" onclick="closeSidebar()"><span>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-                    </span></li>
+                    <li class="close-btn"><span id="closeButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#e8eaed">
+                                <path
+                                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </span></li>
                     <li><a href="">Home</a></li>
                     <li><a href="">Github</a></li>
                     <li><a href="">Portfolio</a></li>
                     <li><a href="">Download Code</a></li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+
+    <div class="main">
+        <div class="panel">
+            <div class="cards"></div>
         </div>
     </div>
 
