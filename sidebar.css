@@ -1,0 +1,57 @@
+/* Nav part 2 */
+
+.sidebar {
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    background-color: rgba(110, 110, 110, 0.454);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    width: 400px;
+    height: 100vh;
+}
+
+.NavContent2 {
+    width: 100%;
+}
+
+.NavContent2 a {
+    text-decoration: none;
+    color: white;
+}
+
+.NavContent2 ul {
+    height: 50px;
+}
+
+.NavContent2 ul li:nth-child(1) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    height: 50px;
+    margin: 0px 20px;
+}
+
+.NavContent2 ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    height: 50px;
+}
+
+.NavContent2 ul li a:hover
+{
+    text-shadow: 2px 2px 18px #FF0000;
+}
+
+.menu-btn
+{
+    cursor: pointer;
+}
+
+.close-btn
+{
+    cursor: pointer;
+}

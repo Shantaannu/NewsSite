@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', Courier, monospace;
 }
 
 html,body
@@ -9,3 +10,87 @@ html,body
     width: 100%;
     height: 100%;
 }
+
+.Nav1
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(143, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo
+{
+    margin: 0px 15px;
+    font-family:'Poppins', Courier, monospace ;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* search */
+
+.search
+{
+    width: 250px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search input
+{
+    margin: 0px 10px;
+    width: 200px;
+    border: none;
+    outline: none;
+}
+
+.search button
+{
+    margin: 0px 8px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* nav content */
+
+.Nav1_content ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Nav1_content ul li
+{
+    margin: 0px 10px;
+    list-style: none;
+}
+
+.Nav1_content ul li a
+{
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+
+/* Menu button */
+
+.menu-btn svg
+{
+    display: block;
+}
+
+/* sidebar */
+
+
+
+

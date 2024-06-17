@@ -1,0 +1,10 @@
+
+/* main Content */
+
+.main
+{
+    width: 100%;
+    height: calc(100% - 50px);
+    background-color: black;
+}
+
