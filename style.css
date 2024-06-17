@@ -159,7 +159,7 @@ html,body
 
 #blog-container
 {
-    padding: 3rem 0;
+    padding: 3rem 7rem;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -169,6 +169,7 @@ html,body
 .blog_card
 {
     width: 280px;
+    height: 435px;
     border: 1px solid black;
     cursor: pointer;
     padding: 1rem;

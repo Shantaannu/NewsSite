@@ -1,3 +1,4 @@
+// Sidebar functions
 function openSidebar() {
     const sidebar = document.getElementById("sidebar");
     sidebar.style.display = "block";
@@ -8,6 +9,7 @@ function closeSidebar() {
     sidebar.style.display = "none";
 }
 
+// Event listeners for sidebar
 document.getElementById("menuButton").addEventListener("click", openSidebar);
 document.getElementById("closeButton").addEventListener("click", closeSidebar);
 
@@ -16,54 +18,92 @@ window.onload = function () {
     closeSidebar();
 };
 
-
 // API work
-const blogcontainer = document.getElementById("blog-container");
-const APIKEY = "4e5b82a90505488ba61e64609920e4a9";
-const BASEURL = "https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10";
+const blogContainer = document.getElementById("blog-container");
+const API_KEY = "4e5b82a90505488ba61e64609920e4a9";
+const BASE_URL = "https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=10";
 
-async function news() {
-    const URL = `${BASEURL}&apiKey=${APIKEY}`;
+async function fetchNews() {
+    const URL = `${BASE_URL}&apiKey=${API_KEY}`;
 
     try {
-        const Response = await fetch(URL);
-        if (!Response.ok) {
-            throw new Error("Network issue");
-        }
-        else {
-            const data = await Response.json();
+        const response = await fetch(URL);
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        } else {
+            const data = await response.json();
             return data.articles;
         }
-    }
-
-    catch (error) {
-        console.error("Unable to fetch info", error);
+    } catch (error) {
+        console.error("Unable to fetch news:", error);
         return [];
     }
 }
 
-function displayBlogs(articles)
-{
-    blogcontainer.innerHTML = "";
-    articles.forEach(articles => {
-        const blogcard = document.createElement("div");
-        blogcard.classList.add("blog_card");
+function displayBlogs(articles) {
+    blogContainer.innerHTML = "";
+    articles.forEach(article => {
+        const blogCard = document.createElement("div");
+        blogCard.classList.add("blog_card");
+
         const img = document.createElement("img");
-        img.src = articles.urlToImage;
-        img.alt = articles.title;
+        img.src = article.urlToImage || 'placeholder.jpg'; // Placeholder image if urlToImage is not available
+        img.alt = article.title;
+
         const title = document.createElement("h2");
-        title.textContent = articles.title;
+        const truncate = article.title.length > 30
+        ? article.title.slice(0,30) + "..."
+        : article.title;
+        title.textContent = truncate;
+
         const description = document.createElement("p");
-        description.textContent = articles.description;
+        const truncateDesc = article.description.length > 30
+        ? article.description.slice(0,100) + "..."
+        : article.description;
+        title.textContent = truncate;
+        description.textContent = truncateDesc; 
 
-        blogcard.append(img)
-        blogcard.append(title)
-        blogcard.append(description)
-        blogcontainer.appendChild(blogcard)
+        blogCard.append(img, title, description);
+        blogCard.addEventListener("click", () => {
+            window.open(article.url, "_blank");
+        });
+        blogContainer.appendChild(blogCard);
     });
-
 }
 
-// fetch news and display blogs 
+// Function to fetch news by query
+async function fetchNewsQuery(query) {
+    try {
+        const encodedQuery = encodeURIComponent(query);
+        const URL = `https://newsapi.org/v2/everything?q=${encodedQuery}&pageSize=10&apiKey=${API_KEY}`;
+        const response = await fetch(URL);
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        } else {
+            const data = await response.json();
+            return data.articles;
+        }
+    } catch (error) {
+        console.error("Error fetching news by query:", error);
+        return [];
+    }
+}
 
-news().then(articles => displayBlogs(articles));
+// Search functionality
+const searchField = document.getElementById("input-val");
+const searchBtn = document.getElementById("btn-srch");
+
+searchBtn.addEventListener("click", async () => {
+    const query = searchField.value.trim();
+    if (query !== "") {
+        try {
+            const articles = await fetchNewsQuery(query);
+            displayBlogs(articles);
+        } catch (error) {
+            console.log("Error fetching news by query:", error);
+        }
+    }
+});
+
+// Initial fetch and display of news
+fetchNews().then(articles => displayBlogs(articles));

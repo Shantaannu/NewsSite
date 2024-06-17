@@ -73,6 +73,11 @@
 
     /* main */
 
+    #blog-container
+{
+    padding: 3rem 1rem;
+}
+
     .blog_card
     {
         width: 100%;
